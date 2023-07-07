@@ -1,0 +1,114 @@
+
+
+
+
+
+Tipo di Grafico: Gauge
+
+Data source: ReadWrite
+
+Query N°1
+       Fields
+              Field N°1
+              - field = $.data[*].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_t')].time
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data[*].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_t')].value
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /feeds
+                     
+
+       Params (Key e Value)
+              
+              interval /  minute
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+
+Query N°2
+       Fields
+              Field N°1
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_0')].time
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_0')].value
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+        Path => GET 
+                     /feeds
+
+       Params (Key e Value)
+              
+              interval /  minute
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+
+Query N°3
+       Fields
+              Field N°1
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_1')].time
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_1')].value
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /feeds
+
+
+       Params (Key e Value)
+              
+              interval /  minute
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+
+Query N°4
+       Fields
+              Field N°1
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_2')].time
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data[${trifase}].meta.feeds[?(@.tag == '${dispositivo}' && @.name == 'fattore_potenza_2')].value
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /feeds
+
+
+       Params (Key e Value)
+              
+              interval /  minute
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1

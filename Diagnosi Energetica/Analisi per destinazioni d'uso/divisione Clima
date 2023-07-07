@@ -1,0 +1,62 @@
+
+
+Query 
+    Data source = ReadWrite 
+
+    Query N°1
+        Fields
+            field = $.data.data[*].ts 
+            JSONPath
+            Type = Time 
+            Alias = Time
+
+//////////////////////7
+
+            field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto 
+            Alias = Gestionale
+
+        Path = /etl/tempo-valore
+
+        Params 
+
+            id / 69
+            interval / hour
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true
+
+
+
+
+
+Query N°2
+        Fields
+            field = $.data.data[*].ts 
+            JSONPath
+            Type = Time 
+            Alias = Time
+
+//////////////////////7
+
+            field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto 
+            Alias = Tecnica
+
+        Path = /etl/tempo-valore
+
+        Params 
+
+            id / 65
+            interval / hour
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true
+
+

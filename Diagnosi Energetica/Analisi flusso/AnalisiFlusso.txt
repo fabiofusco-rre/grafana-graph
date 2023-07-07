@@ -1,0 +1,14 @@
+
+
+Tipo di grafico : Plotly panel
+
+
+Data source = infinity
+
+
+    Query 
+        Type = JSON 
+        source = URL
+        Format =Table
+        URL = https://pj63zlby20.execute-api.eu-central-1.amazonaws.com/default/energyFlow_v1
+        Rows = $data[tree][*]

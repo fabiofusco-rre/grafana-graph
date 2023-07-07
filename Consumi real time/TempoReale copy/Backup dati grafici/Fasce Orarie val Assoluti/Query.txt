@@ -1,0 +1,44 @@
+Tipo di Grafico: Plotly panel
+
+Data source: ReadWrite
+
+Query
+       Fields
+              Field N°1
+              - field = $.data.data[*].indice
+              - Linguaggio = JSONPath 
+              - Type = String
+              Alias = Number
+
+              Field N°2
+              - field = $.data.data[*].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = F1
+
+              Field N°3
+              - field = $.data.data[*].grf_2
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = F2
+
+              Field N°4
+              - field = $.data.data[*].grf_3
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = F3
+
+
+       Path => GET 
+              /etl/fasce-orarie
+
+       Params (Key e Value)
+              
+              id /  ${energia_idt}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  ${getDelta}

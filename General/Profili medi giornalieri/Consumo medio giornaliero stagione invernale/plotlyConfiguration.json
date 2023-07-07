@@ -1,0 +1,17 @@
+{
+    "displayModeBar": true,
+    "displaylogo": false,
+    "modeBarButtonsToRemove": [
+      "toggleSpikelines",
+      "hoverClosestCartesian",
+      "hoverCompareCartesian"
+    ]
+  }{
+    "displayModeBar": true,
+    "displaylogo": false,
+    "modeBarButtonsToRemove": [
+      "toggleSpikelines",
+      "hoverClosestCartesian",
+      "hoverCompareCartesian"
+    ]
+  }

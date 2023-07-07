@@ -1,0 +1,156 @@
+
+
+
+Tipo di grafoco = Gauge
+
+
+Data source: ReadWrite
+
+
+Query N°1 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = 
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = FV5
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 13
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limit interval / 1
+            getDelta / true
+
+/////////////////
+
+Query N°2 (B)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = 
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = FV6
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 17
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limit interval / 1
+            getDelta / true
+
+/////////////////
+
+Query N°3 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = 
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = PdC
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 13
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limit interval / 1
+            getDelta / true
+
+/////////////////
+
+
+Query N°4 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Immessa in rete
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 11
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limit interval / 1
+            getDelta / true
+
+/////////////////
+
+
+Query N°5 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Prelevata da rete
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 12
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limit interval / 1
+            getDelta / true
+
+/////////////////
+

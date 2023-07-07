@@ -1,0 +1,17 @@
+
+
+General
+
+    Name = volt_idt
+    Label = 
+    Type = custom
+    Hide = 
+    Description = 
+
+custom Options
+
+    Values separated by comma = *,no
+
+Selection Options
+        Multi-value = off
+        nclude All option = off

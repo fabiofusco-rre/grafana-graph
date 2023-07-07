@@ -1,0 +1,49 @@
+Tipo di Grafico: Plotly panel
+
+Data source: ReadWrite
+
+Query
+       Fields
+              Field N°1
+              - field = $.data.data[*].indice
+              - Linguaggio = JSONPath 
+              - Type = String
+              Alias = Indice Orario
+
+              Field N°2
+              - field = $.data.data[*].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Inverno
+
+              Field N°3
+              - field = $.data.data[*].grf_2
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Primavera
+
+              Field N°4
+              - field = $.data.data[*].grf_3
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Estate 
+
+              Field N°5
+              - field = $.data.data[*].grf_4
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Autunno
+
+       Path => GET 
+              /etl/medieStagionale
+
+       Params (Key e Value)
+              
+              id /  ${energia_idt}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  ${getDelta}

@@ -1,0 +1,128 @@
+Tipo di Grafico: Gauge
+
+Data source: ReadWrite
+
+Query N°1
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id / ${energia_id0}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots / 3
+              getDelta / true
+
+
+Query N°2
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id / ${energia_id1}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots / 3
+              getDelta / true
+
+
+Query N°3
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id / ${energia_id2}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots / 3
+              getDelta / true
+
+Query N°4
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = 
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id / ${energia_idt}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots / 3
+              getDelta / true
+
+
+

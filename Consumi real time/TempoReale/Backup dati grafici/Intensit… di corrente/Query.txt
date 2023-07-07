@@ -1,0 +1,133 @@
+
+
+
+
+Tipo di Grafico: Time Series
+
+Data source: ReadWrite
+
+Query N°1
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Tensione0
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id /  ${volt_id0}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  false
+
+
+
+Query N°2
+       Fields
+              Field N°1
+              - field = $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Tensione1
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id /  ${volt_id1}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  false
+
+
+
+Query N°3
+       Fields
+              Field N°1
+              - $.data.data[${trifase}].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[${trifase}].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Tensione2
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id /  ${volt_id2}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  false
+
+
+
+Query N°4
+       Fields
+              Field N°1
+              - field = $.data.data[*].ts
+              - Linguaggio = JSONPath 
+              - Type = Time
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[*].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Tensionet
+
+
+       Path => GET 
+                     /etl/tempo-valore
+                     
+
+       Params (Key e Value)
+              
+              id /  ${volt_idt}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  false

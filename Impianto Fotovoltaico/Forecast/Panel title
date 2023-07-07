@@ -1,0 +1,295 @@
+
+
+
+Tipo di grafoco = Gauge
+
+
+Data source: ReadWrite
+
+
+Query N°1 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.values[*].timestamp
+            JSONPath
+            Type = Time
+            Alias = 
+
+        Fields N°2
+            Field = $.data.values[*].absolute
+            JSONPath
+            Type = Number
+            Alias = 
+
+        Path = /etl/forecast
+
+
+        Params
+
+            assetId / e7e29e95-4851-4b45-aa2f-5b41d41803fd
+            reqTime / now
+
+/////////////////
+
+
+Query N°2 (B)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = FV6
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1235
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°3 (F)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Casa
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°4 (C)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = PdC
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°5 (Reale)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Immessa in rete
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 11
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°6 (Stimata)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.series.autoConsum[*][0]
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.series.autoConsum[*][1]
+            JSONPath
+            Type = Auto
+            Alias = autoconsumo
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248
+            consumatori / 1215/1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°7 (REal)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Prelevata da rete
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 12
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°8 (D)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.series.exportToGrid[*][0]
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.series.exportToGrid[*][1]
+            JSONPath
+            Type = Auto
+            Alias = Export stimata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori/ 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+Query N°9 (E)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.series.importFromGrid[*][0]
+            JSONPath
+            Type = Time
+
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.series.importFromGrid[*][1]
+            JSONPath
+            Type = Auto
+            Alias = import stimata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true
+
+
+/////////////////
+
+
+
+

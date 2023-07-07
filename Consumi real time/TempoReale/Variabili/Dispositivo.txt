@@ -1,0 +1,32 @@
+
+
+General
+
+    Name = dispositivo
+    Label = dispositivo
+    Type = Query
+    Hide = 
+    Description = 
+
+Query Options
+
+    Data source = ReadWrite 
+    Refresh = On dashboard load
+
+        Fields
+            Field = $.data[*].meta.id
+            JSON Path
+            Type = Auto
+            Alias = 
+            Regex = 
+            Sort = disabled
+
+        Path = /feeds
+        Params = 
+        Headers = 
+        Body = 
+        Experimental = 
+
+Selection Options
+        Multi-value = off
+        Include All option = off

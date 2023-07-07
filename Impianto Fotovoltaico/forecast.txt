@@ -1,0 +1,37 @@
+
+
+
+Tipo di grafoco = Gauge
+
+
+Data source: ReadWrite
+
+
+Query N°1 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.values[*].timestamp
+            JSONPath
+            Type = Time
+
+            Alias = Time
+ù
+        Fields N°2
+            Field = $.data.values[*].absolute
+            JSONPath
+            Type = Number
+            Alias = 
+
+        Path = /etl/forecast
+
+
+        Params
+            assetId / e7e29e95-4851-4b45-aa2f-5b41d41803fd
+            reqTime / now
+
+           
+
+
+/////////////////
+
+

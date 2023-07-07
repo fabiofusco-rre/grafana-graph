@@ -1,0 +1,73 @@
+
+
+
+
+
+Tipo di Grafico: Plotly panel
+
+Data source: ReadWrite
+
+Query
+       Fields
+              Field N°1
+              - field = $.data.data[*].indice
+              - Linguaggio = JSONPath 
+              - Type = String
+              Alias = time
+
+              Field N°2
+              - field = $.data.data[*].grf_1
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Lun
+
+              Field N°3
+              - field = $.data.data[*].grf_2
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Mar
+
+              Field N°4
+              - field = $.data.data[*].grf_3
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Mer 
+
+              Field N°5
+              - field = $.data.data[*].grf_4
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Gio
+
+              Field N°6
+              - field = $.data.data[*].grf_4
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Ven
+
+              Field N°7
+              - field = $.data.data[*].grf_4
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Sab
+
+              Field N°8
+              - field = $.data.data[*].grf_4
+              - Linguaggio = JSONPath 
+              - Type = Auto
+              Alias = Dom
+
+       Path => GET 
+              /etl/medieStagionale
+
+       Params (Key e Value)
+              
+              id /  ${energia_idt}
+              interval /  hour
+              start /  ${__from}
+              end /  ${__to}
+              skipmissing /  0
+              limitinterval /  1
+              slots /  3
+              getDelta /  ${getDelta}
+              season /  Primavera

@@ -1,0 +1,60 @@
+
+
+Query 
+    Data source = ReadWrite 
+
+    Query N°1
+        Fields
+            field = $.data[*].mese
+            JSONPath
+            Type = String 
+            Alias = mese
+
+//////////////////////7
+
+            field = $.data[*].valore
+            JSONPath
+            Type = Auto 
+            Alias = Energia2019
+
+        Path = /etl/time-shift
+
+        Params 
+
+            id / 51
+            interval / hour
+            start / 1546297200000
+            end / 1569880800000
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true
+
+
+
+
+
+Query N°2
+        Fields
+            field = $.data[*].valore
+            JSONPath
+            Type = Time 
+            Alias = Time
+
+//////////////////////7
+
+            field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto 
+            Alias = Condizionamento
+
+        Path = /etl/time-shift
+
+        Params 
+
+            id / 51
+            interval / hour
+            start / 1546297200000
+            end / 1569880800000
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true

@@ -1,0 +1,51 @@
+
+
+
+Tipo di grafoco = Graph (old)
+
+
+Data source: ReadWrite
+
+
+Query N°1 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = F1
+
+            Fields N°3
+            Field = $.data.data[*].grf_2
+            JSONPath
+            Type = Auto
+            Alias = F2
+
+            Fields N°4
+            Field = $.data.data[*].grf_3
+            JSONPath
+            Type = Auto
+            Alias = F3
+
+        Path = /etl/fasce-orarie
+
+
+        Params
+
+            id / ${ValoreID}
+            interval / hour
+            start / 1546297200000
+            end / 1577746800000
+            skipmissing / 0
+            limit interval / 1
+            slots / 3
+            getDelta / true
+
+/////////////////
+

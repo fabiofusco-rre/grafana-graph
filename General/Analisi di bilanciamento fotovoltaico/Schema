@@ -1,0 +1,197 @@
+
+
+
+Tipo di grafoco = FlowCharting
+
+
+Query N°1
+    Data source = ReadWrite
+        Fields
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = FV5
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1248
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+
+/////////////////
+
+
+Query N°2
+    Data source = ReadWrite
+        Fields
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = FV6
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1235
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+/////////////////
+
+Query N°3
+    Data source = ReadWrite
+        Fields
+            Field = $.data.series.produced[*][1]
+            JSONPath
+            Type = Auto
+            Alias = Prodotta
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1248,1235
+            consumatori / 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+
+//////////////////////
+
+Query N°4
+    Data source = ReadWrite
+        Fields
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Pdc
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+
+/////////////////
+
+Query N°5
+    Data source = ReadWrite
+        Fields
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Casa
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+
+////////////////7
+
+Query N°6
+    Data source = ReadWrite
+        Fields
+            Field = $.data.series.consumed[*][1]
+            JSONPath
+            Type = Auto
+            Alias = Consumata
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / 1248,1235
+            consumatori / 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+
+//////////////////////7
+
+Query N°7
+    Data source = ReadWrite
+        Fields
+            Field = $.data.series.exportToGrid[*][1]
+            JSONPath
+            Type = Auto
+            Alias = Esportata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            id / 1248,1235
+            consumatori / 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 
+
+//////////////
+
+Query N°8
+    Data source = ReadWrite
+        Fields
+            Field = $.data.series.importFromGrid[*][1]
+            JSONPath
+            Type = Auto
+            Alias = Importata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            id / 1248,1235
+            consumatori / 1215,1118
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / true 

@@ -1,0 +1,39 @@
+{
+  "font": {
+    "color": "#c7d0d9",
+    "family": "Roboto",
+    "size": 12
+  },
+  "margin": {
+    "b": 40,
+    "t": 30
+  },
+  "paper_bgcolor": "rgba(24,27,31,0)",
+  "plot_bgcolor": "rgba(24,27,31,0)",
+  "xaxis": {
+    "autorange": true,
+    "gridcolor": "#3d4146",
+    "range": [
+      -1,
+      6
+    ],
+    "tickmode": "auto",
+    "title": {
+      "text": "Indice Orario"
+    },
+    "type": "-"
+  },
+  "yaxis": {
+    "autorange": true,
+    "gridcolor": "#3d4146",
+    "range": [
+      -1,
+      4
+    ],
+    "tickmode": "auto",
+    "ticks": "outside",
+    "title": {
+      "text": "Kw/h"
+    }
+  }
+}

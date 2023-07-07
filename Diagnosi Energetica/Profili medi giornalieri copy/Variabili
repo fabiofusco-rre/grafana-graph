@@ -1,0 +1,22 @@
+
+
+
+Variabile 
+
+        Nome: ValoreID 
+        Label : Selezionare valore id
+        Type: Query
+        Hide : 
+
+
+        Query options
+            Data source : nodejs-digital-ocean-write - not found
+            refresh : on dashboard load
+            regex : 
+            sort: numerical (asc)
+
+            selection options
+
+            multi value: off
+            include all options: off
+            

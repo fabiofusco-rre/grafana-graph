@@ -1,0 +1,23 @@
+
+
+Tipo di Grafico: Gauge
+
+Query 
+    Data source = ReadWrite 
+
+    Fields
+        Field n°1 = $.data.data[*].ts => JSONPath => Type = Time => Alias = time
+        Field n°2 = $.data.data[*].ts => JSONPath => Type = auto => Alias = Valore
+
+    Path = /etl/tempo-valore   
+
+    Params 
+
+        id / 813
+        interval / minute
+        start / ${__from}
+        end / ${__to}
+        skipmissing / 0
+        limitinterval / 1
+        
+         

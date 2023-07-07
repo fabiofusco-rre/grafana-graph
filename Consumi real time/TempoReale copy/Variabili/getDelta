@@ -1,0 +1,17 @@
+
+
+General
+
+    Name = getDelta
+    Label = Energia cumulata
+    Type = custom
+    Hide = 
+    Description = 
+
+custom Options
+
+    Values separated by comma = true,false
+
+Selection Options
+        Multi-value = off
+        nclude All option = off

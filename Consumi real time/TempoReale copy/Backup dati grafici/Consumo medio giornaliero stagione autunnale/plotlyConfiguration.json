@@ -1,0 +1,9 @@
+{
+  "displayModeBar": true,
+  "displaylogo": false,
+  "modeBarButtonsToRemove": [
+    "toggleSpikelines",
+    "hoverClosestCartesian",
+    "hoverCompareCartesian"
+  ]
+}

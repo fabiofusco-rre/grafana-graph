@@ -1,0 +1,32 @@
+
+
+General
+
+    Name = energia
+    Label = energia
+    Type = Query
+    Hide = Variable
+    Description = 
+
+Query Options
+
+    Data source = ReadWrite 
+    Refresh = On dashboard load
+
+        Fields
+            Field = $.data[*].meta.feeds[?(@.tag == '${dispositivo}')].name
+            JSON Path
+            Type = Auto
+            Alias = name
+            Regex = /.*energia_importata_.*/
+            Sort = disabled
+
+        Path = /feeds
+        Params = 
+        Headers = 
+        Body = 
+        Experimental = 
+
+Selection Options
+        Multi-value = off
+        Include All option = on

@@ -1,0 +1,47 @@
+
+
+
+
+Query 
+    Data source = ReadWrite 
+
+    Query N°1
+        Fields
+            field = $[*].tag
+            JSONPath
+            Type = Auto 
+            Alias = Dispositivo
+
+//////////////////////7
+
+            field = $[*].name
+            JSONPath
+            Type = Auto 
+            Alias = Nome Misura
+
+//////////////////////7
+
+            Fields
+            field = $[*].id
+            JSONPath
+            Type = Number 
+            Alias = ID Misura
+
+//////////////////////7
+
+            field = $[*].value
+            JSONPath
+            Type = Number 
+            Alias = Ultimo val
+
+
+//////////////////////7
+
+            field = $[*].unit
+            JSONPath
+            Type = Auto 
+            Alias = um
+
+        Path = /feeds
+
+        Params =

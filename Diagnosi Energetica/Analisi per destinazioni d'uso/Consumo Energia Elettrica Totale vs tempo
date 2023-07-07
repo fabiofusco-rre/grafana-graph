@@ -1,0 +1,63 @@
+
+
+Tipo grafico : Graph (old)
+
+
+Query 
+    Data source = ReadWrite 
+
+    Query N°1
+        Fields
+            field = $.data.data[*].ts 
+            JSONPath
+            Type = Time 
+            Alias = Time
+
+//////////////////////7
+
+            field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto 
+            Alias = ContatoreGen-AreaGestionale
+
+        Path = /etl/tempo-valore
+
+        Params 
+
+            id / 1023
+            interval / hour
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true
+
+
+
+
+
+Query N°2
+        Fields
+            field = $.data.data[*].ts 
+            JSONPath
+            Type = Time 
+            Alias = Time
+
+//////////////////////7
+
+            field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto 
+            Alias = ContatoreGen-AreaTecnica
+
+        Path = /etl/tempo-valore
+
+        Params 
+
+            id / 1023
+            interval / hour
+            start / ${__from}
+            end / ${__to}
+            skipmissing / 0
+            limitinterval / 1
+            getDelta / true

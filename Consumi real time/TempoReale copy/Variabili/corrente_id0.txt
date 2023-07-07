@@ -1,0 +1,32 @@
+
+
+General
+
+    Name = corrente_id0
+    Label = corrente_id0
+    Type = Query
+    Hide = Variable
+    Description = 
+
+Query Options
+
+    Data source = ReadWrite 
+    Refresh = On dashboard load
+
+        Fields
+            Field = $.data[*].meta.feeds[?(@.tag == '${dispositivo}' && @.name.indexOf('corrente_0')>-1)].id
+            JSON Path
+            Type = String
+            Alias = id
+            Regex = 
+            Sort = disabled
+
+        Path = /feeds
+        Params = 
+        Headers = 
+        Body = 
+        Experimental = 
+
+Selection Options
+        Multi-value = off
+        Include All option = off

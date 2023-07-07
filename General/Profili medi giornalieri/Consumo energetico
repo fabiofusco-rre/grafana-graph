@@ -1,0 +1,40 @@
+
+
+
+Tipo di grafoco = Time series
+
+
+Data source: ReadWrite
+
+
+Query N°1 (A)
+    Data source = ReadWrite
+        Fields N°1
+            Field = $.data.data[*].ts
+            JSONPath
+            Type = Time
+            Alias = Time
+
+        Fields N°2
+            Field = $.data.data[*].grf_1
+            JSONPath
+            Type = Auto
+            Alias = Energia
+
+        Path = /etl/tempo-valore
+
+
+        Params
+
+            id / ${ValoreID}
+            interval / hour
+            start / 1546297200000
+            end / 1577746800000
+            skipmissing / 0
+            limit interval / 1
+            slots / 3
+            ApiKey / cf7701e5b12d43f0bd3f622e058a2b7f
+            getDelta / true
+
+/////////////////
+

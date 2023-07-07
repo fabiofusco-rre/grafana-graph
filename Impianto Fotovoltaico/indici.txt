@@ -1,0 +1,159 @@
+
+
+
+Tipo di grafoco = Gauge
+
+
+Data source: ReadWrite
+
+
+Query N°1 (Autoncosumo)
+    Data source = ReadWrite
+        Fields
+            Field = $.data.percentage.autoConsumRel
+            JSONPath
+            Type = Number
+            Alias = / Consumata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
+
+
+Query N°2 (Importata)
+    Data source = ReadWrite
+        Fields
+            Field = $.data.percentage.importFromGridRel
+            JSONPath
+            Type = Number
+            Alias = / Consumata
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
+
+Query N°3 (Esportata)
+    Data source = ReadWrite
+        Fields
+            Field = $.data.percentage.exportToGridRel
+            JSONPath
+            Type = Number
+            Alias = / Prodotta
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
+
+Query N°4 (Autoconsumata)
+    Data source = ReadWrite
+        Fields
+            Field = $$.data.total.autoConsum
+            JSONPath
+            Type = Number
+            Alias = 
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
+
+Query N°5 (Scambio sul posto)
+    Data source = ReadWrite
+        Fields
+            Field = $.data.total.exanchedInSitu
+            JSONPath
+            Type = Number
+            Alias = 
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
+
+Query N°6 (Eccedente)
+    Data source = ReadWrite
+        Fields
+            Field = $.data.total.exceeding
+            JSONPath
+            Type = Number
+            Alias = 
+
+        Path = /etl/bilancio
+
+
+        Params
+
+            produttori / 1248,1235
+            consumatori / 1118,1215
+            interval / ${interval}
+            start / ${__from}
+            end / ${__to}
+            skipmissing 0
+            limitinterval / 1
+            getDelta / false
+
+
+/////////////////
